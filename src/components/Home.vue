@@ -1,8 +1,8 @@
 <template>
    <div class="text-center">
       <p>Let's play the game</p>
-      <h2 class="text-primary pb-3">Current Score</h2>
-      <span class="text-primary" pb-3>Max Score:</span>
+      <h2 class="text-primary pb-3">Current Score: {{ gameStore.score }}</h2>
+      <span class="text-primary" pb-3>Max Score: {{ gameStore.maxHealth }}</span>
       <br />
       <div class="row">
          <div class="col-5 offset-1">
@@ -18,4 +18,8 @@
    </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { useGameStore } from "../store/gameStore.js";
+
+const gameStore = useGameStore()
+</script>
