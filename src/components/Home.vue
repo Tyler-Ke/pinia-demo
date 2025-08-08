@@ -6,13 +6,16 @@
          >Max Score: {{ gameStore.maxHealth }}</span
       >
       <br />
-      <span v-if="gameStore.getScore >= 100" class="text-success pb-3 h3">
+      <span v-if="gameStore.getScore >= gameStore.maxHealth" class="text-success pb-3 h3">
          You Won!
       </span>
       <span class="text-danger pb-3 h3" v-if="gameStore.getScore < 0">
          You Lost!
       </span>
-      <div class="row" v-if="gameStore.getScore < 100 && gameStore.getScore >= 0">
+      <div
+         class="row"
+         v-if="gameStore.getScore < gameStore.maxHealth && gameStore.getScore >= 0"
+      >
          <div class="col-5 offset-1">
             <button @click="increment" class="form-control btn btn-success p-4">
                Increment
