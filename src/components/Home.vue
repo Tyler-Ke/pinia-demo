@@ -32,11 +32,11 @@ import { useGameStore } from "../store/gameStore.js";
 const gameStore = useGameStore();
 
 function increment() {
-   gameStore.score += gameStore.getNextAttack;
+   gameStore.setNextAttack();
 }
 
 function decrement() {
-   gameStore.score -= gameStore.getNextDefense;
+   gameStore.setNextDefense();
 }
 
 function random() {
